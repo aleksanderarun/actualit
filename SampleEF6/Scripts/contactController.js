@@ -22,20 +22,17 @@ function contactController($scope, $http, $q) {
     $scope.show_modal = function(contact) {
         $scope.deleteContact = contact;
         $scope.m_show = "modal-show";
-        console.log("showing modal");
         $scope.modalActive = false;
     }
 
     $scope.closeDeleteModal = function () {
         $scope.m_show = "modal";
-        console.log("closing modal");
         $scope.modalActive = true;
         location.reload();
     }
 
     $scope.closeModal = function () {
         $scope.m_show = "modal";
-        console.log("closing modal");
         $scope.modalActive = true;
         location.reload();
     }
