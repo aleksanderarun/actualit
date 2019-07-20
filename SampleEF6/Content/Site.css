@@ -1,0 +1,117 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* for modal*/
+a[ ng-click ] {
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+div.m-modals {
+    background-color: rgba( 0, 0, 0, 0.8 );
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+}
+
+    div.m-modals.ng-hide {
+        background-color: rgba( 0, 0, 0, 0 );
+    }
+
+    div.m-modals.ng-hide-add.ng-hide-add-active,
+    div.m-modals.ng-hide-remove.ng-hide-remove-active {
+        transition: 250ms ease all;
+    }
+
+    div.m-modals > .modal {
+        background-color: #FAFAFA;
+        border-radius: 3px 3px 3px 3px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        padding: 20px 20px 20px 20px;
+        position: fixed;
+        left: 50%;
+        margin-left: -200px;
+        top: 200px;
+        width: 400px;
+    }
+
+    div.m-modals.ng-hide > .modal.ng-enter {
+        top: -200px;
+        transition: 250ms ease top;
+    }
+
+        div.m-modals.ng-hide > .modal.ng-enter.ng-enter-active {
+            top: 200px;
+        }
+
+a.jump {
+    color: #999999;
+}
+
+    a.jump:hover {
+        background-color: gold;
+        color: #000000;
+    }
+
+
+
+.left-nav, .right-nav {
+    float: left;
+}
+
+.right-nav {
+    margin-left: 20px;
+}
+
+a {
+    cursor: pointer;
+}
+
+
+.modal-header {
+    text-align: center;
+}

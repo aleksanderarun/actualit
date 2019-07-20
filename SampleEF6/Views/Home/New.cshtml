@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "New";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>This is the New page!</p>
+
+
+<div ng-app="" ng-controller="contactController" class="container">
+    <strong class="error">{{ error }}</strong>
+
+    <div class="row">
+        <div class="logs-table col-xs-12">
+            <table class="table table-bordered table-hover" style="width:100%">
+                <tr>
+                    <th>FirstName </th>
+                    <th>LastName </th>
+                    <th>Address</th>
+                    <th>Telephone number</th>
+
+                </tr>
+
+                <tr>
+                    <td><input ng-required="true" ng-model="newcontact.FirstName"></td>
+                    <td><input ng-model="newcontact.LastName"></td>
+                    <td><input ng-model="newcontact.Address"></td>
+                    <td><input ng-model="newcontact.TelNum"></td>
+                    <td><button ng-click="saveContact(newcontact)">Create</button></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</div>
+
