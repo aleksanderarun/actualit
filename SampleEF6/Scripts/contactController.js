@@ -19,7 +19,8 @@ function contactController($scope, $http, $q) {
 
 
 
-    $scope.show_modal = function(contact) {
+    $scope.show_modal = function (contact) {
+        console.log(contact);
         $scope.deleteContact = contact;
         $scope.m_show = "modal-show";
         $scope.modalActive = false;
@@ -28,13 +29,16 @@ function contactController($scope, $http, $q) {
     $scope.closeDeleteModal = function () {
         $scope.m_show = "modal";
         $scope.modalActive = true;
+        console.log($scope.deleteContact.Id);
+        remove($scope.deleteContact.Id);
+        alert("Deleted!");
         location.reload();
     }
 
     $scope.closeModal = function () {
         $scope.m_show = "modal";
         $scope.modalActive = true;
-        location.reload();
+        //location.reload();
     }
 
 
@@ -52,9 +56,13 @@ function contactController($scope, $http, $q) {
     }
     
     $scope.saveContact = function (contact) { //problem z asinhronostjo
-        if (contact == undefined) {
+
+        var numContactItems = Object.keys(contact).length;
+
+        if (contact == undefined || numContactItems < 4) {
             alert("empty fields! fill them out!");
-            location.reload();
+            //location.reload();
+        
         } else {
             save(contact);
             $scope.newcontact = {};
@@ -62,6 +70,9 @@ function contactController($scope, $http, $q) {
         }
   
     }
+
+ 
+
 
     function getContacts() {
         
