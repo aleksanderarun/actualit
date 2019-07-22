@@ -1085,7 +1085,6 @@
     <Content Include="Scripts\select.min.js.map" />
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\New.cshtml" />
-    <Content Include="Views\Home\modalContent.cshtml" />
     <Content Include="Scripts\underscore.min.map" />
   </ItemGroup>
   <ItemGroup>

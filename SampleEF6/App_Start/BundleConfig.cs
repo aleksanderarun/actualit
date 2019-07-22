@@ -28,12 +28,11 @@ namespace SampleEF6
                       "~/Content/animate.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
+            bundles.Add(new ScriptBundle("~/bundles/angularjs").Include( //inlcuding scripts for the views
                       "~/Scripts/angular.js",
                       "~/Scripts/contactController.js",
                       "~/Scripts/animateCss/animateCss.js",
                       "~/Scripts/searchController.js"
-                       //"~/Scripts/angular-ui/ui-bootstrap.js"
                       ));
         }
     }

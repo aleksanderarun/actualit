@@ -6,27 +6,33 @@
 function contactController($scope, $http, $q) {
     $scope.contacts = [];
     $scope.contact = {};
-    
+
+
+
     init();
 
     function init() {
         getContacts();
-        console.log("test");
-        $scope.viewed = false;
-        $scope.m_show = "modal";
-        $scope.modalActive = true;
+
+
+        $scope.viewed = false; //modal was not viewed
+        $scope.m_show = "modal"; //hide modal
+        $scope.modalActive = true; //modal was not viewed
+
+
+
     }
 
 
 
-    $scope.show_modal = function (contact) {
+    $scope.show_modal = function (contact) { //execute when modal opened
         console.log(contact);
         $scope.deleteContact = contact;
         $scope.m_show = "modal-show";
         $scope.modalActive = false;
     }
 
-    $scope.closeDeleteModal = function () {
+    $scope.closeDeleteModal = function () { //execute when used wants to delete contact
         $scope.m_show = "modal";
         $scope.modalActive = true;
         console.log($scope.deleteContact.Id);
@@ -35,18 +41,14 @@ function contactController($scope, $http, $q) {
         location.reload();
     }
 
-    $scope.closeModal = function () {
+    $scope.closeModal = function () { //user cancels modal
         $scope.m_show = "modal";
         $scope.modalActive = true;
         //location.reload();
     }
 
 
-    $scope.$watch('newContact', function () {
-        console.log($scope.newContact)
-    });
-
-    $scope.viewContact = function (id) {
+    $scope.viewContact = function (id) {//view specific contact
         console.log(id);
         $scope.singleContact = $scope.contacts.filter(function (item) {
             return item.Id == id;
@@ -72,9 +74,7 @@ function contactController($scope, $http, $q) {
     }
 
  
-
-
-    function getContacts() {
+    function getContacts() { //gets contacts from api, returns array
         
         var deferred = $q.defer();
         
@@ -91,7 +91,7 @@ function contactController($scope, $http, $q) {
         return deferred.promise;
     };
 
-    function getContact(id) {
+    function getContact(id) {//gets single contact
         var deferred = $q.defer();
         $http.get('/api/Contact/' + id).success(function (results) {
             $scope.contact = results;
@@ -105,7 +105,7 @@ function contactController($scope, $http, $q) {
 
 
 
-    function save(contact) {
+    function save(contact) { //saves contact
         console.log("value of contact in save function", contact);
         var deferred = $q.defer();
         $http.post('/api/Contact/' ,contact).success(function (results) {
@@ -119,7 +119,7 @@ function contactController($scope, $http, $q) {
         return deferred.promise;
     };
 
-    function edit(contact) {
+    function edit(contact) {// edits contact, not implemented yet
         var deferred = $q.defer();
         $http.put('/api/Contact/' + contact).success(function (results) {
             $scope.contact = results;
@@ -131,7 +131,7 @@ function contactController($scope, $http, $q) {
         return deferred.promise;
     };
 
-    function remove(id) {
+    function remove(id) {// removes contact 
         var deferred = $q.defer();
         $http.delete('/api/Contact/' + id).success(function (results) {
             deferred.resolve(results);
